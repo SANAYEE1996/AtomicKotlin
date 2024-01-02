@@ -5,13 +5,7 @@ package coding
  * */
 
 fun removeElement(nums: IntArray, value: Int): Int {
-    var sum = 0
-    var index = 0
-    for (i in nums){
-        if (i == value) continue
-        sum++
-        nums[index] = i
-        index++
-    }
-    return sum
+    val c = nums.filter { it != value }
+    for ((a, b) in c.withIndex()) { nums[a] = b }
+    return c.size
 }
